@@ -5,6 +5,10 @@
  */
 package mmtimehistory;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Timer;
+
 /**
  *
  * @author Home-dev
@@ -13,10 +17,12 @@ public class MMTimeHistory {
 
     /**
      * @param args the command line arguments
+     * String[] args
      */
-    public static void main(String[] args) {
+    public static void main() {
         // TODO code application logic here
-        
-    }
+        System.out.println("Inicia proceso"); 
+        //mostrarFecha();
+    }      
     
 }

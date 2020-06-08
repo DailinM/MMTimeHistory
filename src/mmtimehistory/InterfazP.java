@@ -7,6 +7,12 @@ package mmtimehistory;
 
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.swing.Timer;
+
 
 /**
  *
@@ -20,11 +26,32 @@ public class InterfazP extends javax.swing.JFrame {
     public InterfazP() {
         initComponents();
         this.setLocationRelativeTo(null);
+        mostrarFecha();
+        mostrarHora();
     }
     
     public Image getIconImage() {
-        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagenes/icono.png"));
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagenes/icono3.png"));
         return retValue;
+    }
+    
+    void mostrarFecha(){
+        SimpleDateFormat s = new SimpleDateFormat("dd/MM/yy");
+        Date d = new Date();
+        fecha.setText(s.format(d)); 
+        
+        
+    }
+    
+    void mostrarHora(){
+        new Timer (0, new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                SimpleDateFormat s = new SimpleDateFormat("hh:mm a");
+                Date d = new Date();
+                hora.setText(s.format(d));
+            }            
+        }).start();
+        
     }
 
     /**
@@ -38,6 +65,12 @@ public class InterfazP extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        fecha = new javax.swing.JLabel();
+        hora = new javax.swing.JLabel();
+        jLabelHoraInicio = new javax.swing.JLabel();
+        jLabelHoraFin = new javax.swing.JLabel();
+        horaInicio = new javax.swing.JTextField();
+        horaFin = new javax.swing.JTextField();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,6 +89,30 @@ public class InterfazP extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        fecha.setFont(new java.awt.Font("Gabriola", 1, 48)); // NOI18N
+        fecha.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, 160, 50));
+
+        hora.setFont(new java.awt.Font("Gabriola", 1, 36)); // NOI18N
+        hora.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 50, 140, 50));
+
+        jLabelHoraInicio.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabelHoraInicio.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelHoraInicio.setText("Hora inicio: ");
+        getContentPane().add(jLabelHoraInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 170, -1, -1));
+
+        jLabelHoraFin.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabelHoraFin.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelHoraFin.setText("Hora Fin:");
+        getContentPane().add(jLabelHoraFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, -1, -1));
+
+        horaInicio.setText("valor");
+        getContentPane().add(horaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 170, 60, -1));
+
+        horaFin.setText("valor");
+        getContentPane().add(horaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, 60, -1));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_pintuda_rosada.png"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 763, 836));
@@ -101,11 +158,21 @@ public class InterfazP extends javax.swing.JFrame {
                 new InterfazP().setVisible(true);
             }
         });
+        
+        
+        MMTimeHistory TH = new MMTimeHistory();
+        TH.main();   
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel fecha;
+    private javax.swing.JLabel hora;
+    private javax.swing.JTextField horaFin;
+    private javax.swing.JTextField horaInicio;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelFondo;
+    private javax.swing.JLabel jLabelHoraFin;
+    private javax.swing.JLabel jLabelHoraInicio;
     // End of variables declaration//GEN-END:variables
 }
