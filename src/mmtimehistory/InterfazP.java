@@ -63,6 +63,7 @@ public class InterfazP extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        rSCalendar1 = new rojeru_san.componentes.RSCalendar();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         fecha = new javax.swing.JLabel();
@@ -71,6 +72,15 @@ public class InterfazP extends javax.swing.JFrame {
         jLabelHoraFin = new javax.swing.JLabel();
         horaInicio = new javax.swing.JTextField();
         horaFin = new javax.swing.JTextField();
+        jLabelTotalHoras = new javax.swing.JLabel();
+        jLabelIDact = new javax.swing.JLabel();
+        botonInicio = new javax.swing.JButton();
+        botonFin = new javax.swing.JButton();
+        jLabelDescAct = new javax.swing.JLabel();
+        jLabelAlarma = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        rSCalendar2 = new rojeru_san.componentes.RSCalendar();
+        rSDateChooser1 = new rojeru_san.componentes.RSDateChooser();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -106,13 +116,43 @@ public class InterfazP extends javax.swing.JFrame {
         jLabelHoraFin.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabelHoraFin.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabelHoraFin.setText("Hora Fin:");
-        getContentPane().add(jLabelHoraFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, -1, -1));
+        getContentPane().add(jLabelHoraFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, -1, -1));
 
         horaInicio.setText("valor");
         getContentPane().add(horaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 170, 60, -1));
 
         horaFin.setText("valor");
-        getContentPane().add(horaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, 60, -1));
+        getContentPane().add(horaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 210, 60, -1));
+
+        jLabelTotalHoras.setText("TOTAL HORAS");
+        getContentPane().add(jLabelTotalHoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 170, 120, 80));
+
+        jLabelIDact.setText("ID actividad");
+        getContentPane().add(jLabelIDact, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, -1, -1));
+
+        botonInicio.setText("Inicio");
+        getContentPane().add(botonInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, -1, -1));
+
+        botonFin.setText("Fin");
+        getContentPane().add(botonFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 320, -1, -1));
+
+        jLabelDescAct.setText("Desc Actividad");
+        getContentPane().add(jLabelDescAct, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 330, -1, -1));
+
+        jLabelAlarma.setText("Alarmas");
+        getContentPane().add(jLabelAlarma, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 490, -1, -1));
+
+        jCheckBox1.setText(" Primera Alarma");
+        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 530, -1, -1));
+
+        rSCalendar2.setBackground(new java.awt.Color(204, 204, 204));
+        rSCalendar2.setColorBackground(new java.awt.Color(0, 0, 0));
+        rSCalendar2.setColorButtonHover(new java.awt.Color(153, 153, 255));
+        rSCalendar2.setFuenteFilas(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        rSCalendar2.setFuenteHead(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        rSCalendar2.setMinimumSize(new java.awt.Dimension(240, 340));
+        getContentPane().add(rSCalendar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 280, 340));
+        getContentPane().add(rSDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, -1, -1));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_pintuda_rosada.png"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 763, 836));
@@ -165,14 +205,24 @@ public class InterfazP extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonFin;
+    private javax.swing.JButton botonInicio;
     private javax.swing.JLabel fecha;
     private javax.swing.JLabel hora;
     private javax.swing.JTextField horaFin;
     private javax.swing.JTextField horaInicio;
     private javax.swing.JButton jButton1;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelAlarma;
+    private javax.swing.JLabel jLabelDescAct;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelHoraFin;
     private javax.swing.JLabel jLabelHoraInicio;
+    private javax.swing.JLabel jLabelIDact;
+    private javax.swing.JLabel jLabelTotalHoras;
+    private rojeru_san.componentes.RSCalendar rSCalendar1;
+    private rojeru_san.componentes.RSCalendar rSCalendar2;
+    private rojeru_san.componentes.RSDateChooser rSDateChooser1;
     // End of variables declaration//GEN-END:variables
 }
